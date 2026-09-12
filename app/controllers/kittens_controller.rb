@@ -2,7 +2,7 @@ class KittensController < ApplicationController
   before_action :set_kitten, only: [ :show, :edit, :update, :destroy ]
 
   def new
-    
+
   end
 
   def create
@@ -10,7 +10,7 @@ class KittensController < ApplicationController
   end
 
   def index
-    
+
   end
 
   def show
@@ -22,6 +22,10 @@ class KittensController < ApplicationController
   end
   
   def update
+    
+  end
+
+  def destroy
     
   end
 
