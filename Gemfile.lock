@@ -376,7 +376,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
-  json (~> 2.21)
+  json (< 3.0.0)
   kamal
   propshaft
   puma (>= 5.0)
