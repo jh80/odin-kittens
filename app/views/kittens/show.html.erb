@@ -1,0 +1,22 @@
+<h1>Meet <%= @kitten.name %> the kitten!</h1>
+<p class="kitten_bio"><%=@kitten.name%> is <%= pluralize(@kitten.age, "month") %> old.</p>
+<h2>Softness</h2>
+<p class="softness_scale">
+    <% (0..10).each do |num| %>
+      <% if @kitten.softness == num %>
+        <strong><%= num %></strong>
+      <% else %>
+        <%= num %>
+      <% end %>
+    <% end %>
+</p>
+<h2>Cuteness</h2>
+<p class="cuteness_scale">
+    <% (0..10).each do |num| %>
+      <% if @kitten.cuteness == num %>
+        <strong><%= num %></strong>
+      <% else %>
+        <%= num %>
+      <% end %>
+    <% end %>
+</p>
