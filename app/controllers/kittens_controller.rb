@@ -29,7 +29,13 @@ class KittensController < ApplicationController
   end
   
   def update
-    
+    if @kitten.update(kitten_params)
+      flash[:notice] = "Kitten updated!"
+      redirect_to @kitten
+    else
+      flash[:alert] = "Kitten update failed, try again"
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
