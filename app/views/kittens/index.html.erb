@@ -6,6 +6,7 @@
         <% @kittens.each do |kitten| %>
             <li class="kitten_info">
                 <%= kitten.name  %>
+                <%= button_to "Delete #{kitten.name}", kitten, method: :delete, data: {turbo_confirm: "Are you sure?"} %>
             </li>
         <% end %>
     </ul>
