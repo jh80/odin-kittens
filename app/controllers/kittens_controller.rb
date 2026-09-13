@@ -2,7 +2,7 @@ class KittensController < ApplicationController
   before_action :set_kitten, only: [ :show, :edit, :update, :destroy ]
 
   def new
-
+    @kitten = Kitten.new
   end
 
   def create
