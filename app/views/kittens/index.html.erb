@@ -1,0 +1,12 @@
+<h1>Kittens!</h1>
+<% if @kittens.empty? %>
+    <p>No kittens yet!</p>
+<% else %>
+    <ul>
+        <% @kittens.each do |kitten| %>
+            <li class="kitten_info">
+                <%= kitten.name  %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
