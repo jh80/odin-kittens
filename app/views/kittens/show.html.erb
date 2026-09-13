@@ -20,3 +20,4 @@
       <% end %>
     <% end %>
 </p>
+<%= button_to "Delete", @kitten, method: :delete, data: {turbo_confirm: "Are you sure?"} %>
