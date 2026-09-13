@@ -13,7 +13,7 @@ class KittensController < ApplicationController
       redirect_to @kitten
     else
       flash[:alert] = "Womp womp. Your kitten wasn't saved"
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
