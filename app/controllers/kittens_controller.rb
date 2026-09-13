@@ -12,6 +12,7 @@ class KittensController < ApplicationController
       flash[:notice] = "You've successfully registered a kitten!"
       redirect_to @kitten
     else
+      flash[:alert] = "Womp womp. Your kitten wasn't saved"
       render :new, status: unprocessable_entity
     end
   end
@@ -33,7 +34,7 @@ class KittensController < ApplicationController
       flash[:notice] = "Kitten updated!"
       redirect_to @kitten
     else
-      flash[:alert] = "Kitten update failed, try again"
+      flash[:alert] = "Oopsy doospy! Kitten update failed, try again"
       render :edit, status: :unprocessable_entity
     end
   end
@@ -41,7 +42,7 @@ class KittensController < ApplicationController
   def destroy
     name = @kitten.name
     @kitten.destroy
-    flash[alert] = "The file for kitten #{name} has been deleted"
+    flash[:alert] = "The file for kitten #{name} has been deleted"
     redirect_to kittens_path
   end
 
