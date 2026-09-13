@@ -6,7 +6,14 @@ class KittensController < ApplicationController
   end
 
   def create
-    
+    @kitten = Kitten.new(kitten_params)
+
+    if @kitten.save
+      flash[:notice] = "You've successfully registered a kitten!"
+      redirect_to @kitten
+    else
+      render :new, status: unprocessable_entity
+    end
   end
 
   def index
@@ -30,6 +37,10 @@ class KittensController < ApplicationController
   end
 
   private
+
+  def kitten_params
+    params.expect(kitten: [ :name, :age, :cuteness, :softness ])
+  end
 
   def set_kitten
     @kitten = Kitten.find(params[:id])
