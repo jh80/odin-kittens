@@ -39,7 +39,10 @@ class KittensController < ApplicationController
   end
 
   def destroy
-    
+    name = @kitten.name
+    @kitten.destroy
+    flash[alert] = "The file for kitten #{name} has been deleted"
+    redirect_to kittens_path
   end
 
   private
